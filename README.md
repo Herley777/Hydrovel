@@ -125,7 +125,7 @@ Acesse o endereço informado pelo Laravel no terminal, normalmente `http://127.0
 
 ##  Protótipo no Figma
 
-**Link:** a adicionar após a publicação do projeto no Figma.
+**Link:** https://www.figma.com/design/ACJ72LwKj2ZrKZ3DCSsRe4?node-id=.
 
 ##  Vídeo de apresentação
 
