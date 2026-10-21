@@ -1,66 +1,161 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Hydrovel 💧
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Plataforma web para monitoramento da água e detecção de vazamentos em sistemas hídricos residenciais.
 
-## About Laravel
+## 📌 Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O Hydrovel é um projeto de IoT desenvolvido para ajudar no monitoramento da água, com foco na identificação de possíveis vazamentos e no acompanhamento de parâmetros de qualidade.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A proposta utiliza um ESP32 e sensores para coletar informações que poderão ser enviadas para uma plataforma web.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Estado atual:** a plataforma web e a API estão em desenvolvimento. Os testes de recebimento e exibição utilizam dados de demonstração. A integração com os sensores físicos ainda não foi concluída.
 
-## Learning Laravel
+## ✨ Funcionalidades
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Visualização de leituras de sensores.
+- Armazenamento de dados em banco SQLite.
+- API para recebimento de leituras.
+- Proteção da API por chave de autenticação.
+- Estrutura preparada para futura integração com o ESP32.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🧰 Tecnologias utilizadas
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP
+- Laravel
+- SQLite
+- HTML, CSS e JavaScript
+- Node.js e npm
+- ESP32 e sensores — integração futura
 
-## Laravel Sponsors
+## ⚙️ Requisitos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Instale no computador:
 
-### Premium Partners
+- Git
+- PHP compatível com a versão do projeto
+- Composer
+- Node.js e npm
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🚀 Como instalar
 
-## Contributing
+### 1. Clonar o repositório
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+git clone https://github.com/Herley777/Hydrovel.git
+cd Hydrovel
+```
 
-## Code of Conduct
+### 2. Instalar as dependências PHP
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+### 3. Criar o arquivo de configuração
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
 
-## License
+No Windows PowerShell, também é possível usar:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```powershell
+Copy-Item .env.example .env
+```
+
+**Atenção:** execute a cópia apenas na instalação nova. Ela pode substituir um arquivo `.env` existente.
+
+### 4. Gerar a chave do Laravel
+
+```bash
+php artisan key:generate
+```
+
+### 5. Preparar o banco SQLite
+
+Crie o arquivo `database/database.sqlite`, caso ainda não exista.
+
+No PowerShell:
+
+```powershell
+if (!(Test-Path database/database.sqlite)) {
+    New-Item database/database.sqlite -ItemType File
+}
+```
+
+Confira no `.env` se existe a configuração:
+
+```env
+DB_CONNECTION=sqlite
+```
+
+### 6. Configurar a chave da API
+
+Defina uma chave própria para a instalação no arquivo `.env`, usando a variável `SENSOR_API_KEY`.
+
+Não compartilhe essa chave e não publique o arquivo `.env`.
+
+### 7. Criar as tabelas e os dados de demonstração
+
+```bash
+php artisan migrate --seed
+```
+
+### 8. Instalar as dependências do frontend
+
+```bash
+npm install
+npm run build
+```
+
+### 9. Iniciar o servidor
+
+```bash
+php artisan serve
+```
+
+Acesse:
+
+- Página de sensores: http://127.0.0.1:8000/sensores
+- Dashboard: http://127.0.0.1:8000/dashboard
+
+O acesso ao dashboard pode exigir cadastro e autenticação.
+
+## 🔌 API de leituras
+
+A API recebe leituras por meio de uma requisição `POST` para:
+
+```text
+/api/leituras
+```
+
+A requisição deve enviar o cabeçalho `X-API-KEY` com a chave configurada na instalação.
+
+Exemplo de corpo JSON:
+
+```json
+{
+  "pressao": 2.5,
+  "vazao": 1.2,
+  "ph": 7.0,
+  "turbidez": 1.5,
+  "temperatura": 24.0
+}
+```
+
+Os valores acima são apenas exemplos de teste, não medições reais.
+
+## ⚠️ Observações
+
+- O projeto ainda não está integrado aos sensores físicos.
+- Os dados de demonstração não representam medições reais da água.
+- Cada pessoa deve configurar seu próprio ambiente e sua própria chave da API.
+- Não publique senhas, tokens ou arquivos de configuração privados.
+
+## 👥 Contribuição
+
+Sugestões e melhorias são bem-vindas. Para colaborar, crie uma cópia do repositório, faça suas alterações e envie um Pull Request.
+
+## 📄 Licença
+
+A licença do projeto ainda deve ser definida pelo responsável pelo repositório.
