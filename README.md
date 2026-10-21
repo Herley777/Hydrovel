@@ -135,7 +135,13 @@ O vídeo deverá demonstrar o funcionamento do site, a autenticação, o banco d
 
 ##  Contribuições dos integrantes
 
-Preencher com o nome de cada integrante e suas contribuições reais no projeto.
+👤 Gustavo Alexandre da Silva: Arquitetura Core e Configuração Inicial Estruturação Inicial do Repositório: Configuração do ambiente de desenvolvimento, pastas base e gerenciamento de dependências. Desenvolvimento da arquitetura core na implementação da lógica principal do sistema e estruturação dos componentes fundamentais. Configuração de rotas e navegação estabelecendo o roteamento e o fluxo de telas/páginas da aplicação. Documentação técnica da elaboração inicial do README principal do projeto e os guias de instalação.
+
+👤 Daniel Bispo Nascimento Batista: Interface do Usuário (UI) e Estilização do design system e identidade visual com definição da paleta de cores, tipografia e diretrizes visuais alinhadas à proposta do Hydrovel. Desenvolvimento de componentes visuais como criação de botões, cards, barras de navegação e elementos reutilizáveis de interface. Responsividade e layouts com garantia de uma experiência fluida e adaptável para dispositivos móveis, tablets e desktops. Experiência do usuário (UX) como ajustes de usabilidade, animações e refinamento estético das telas principais e a criação.
+
+👤 João Victor de Paiva Carvalho: Integração de Dados, API e lógica de negócio com integração de APIs e serviços como conexão com serviços externos, endpoints ou fontes de dados necessárias para o funcionamento do sistema. Gerenciamento de estado como implementação do controle de dados globais/locais da aplicação para sincronização em tempo real. Regras de Negócio com desenvolvimento dos algoritmos de processamento de dados, validações e tratamento de formulários. Tratamento de erros e exceções com implementação de mecanismos de fallback e mensagens de feedback para falhas de rede ou requisições e a criação do vídeo do site.
+
+👤 Cesar Moreno Fernandes: Testes, Qualidade e Implantação (Deploy) com garantia de Qualidade (QA) em Realização de testes funcionais, verificação de bugs e homologação das telas e fluxos. Otimização de performance com auditoria de desempenho, carregamento de assets e boas práticas de código limpo. Configuração de CI/CD e Deploy com automação do processo de publicação da aplicação e hospedagem em ambiente de produção (ex: Vercel, Netlify ou GitHub Pages). Documentação de uso e suporte com criação do manual de instruções do usuário final e relatórios de testes.
 
 ##  Próximas etapas
 
