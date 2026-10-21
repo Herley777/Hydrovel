@@ -1,14 +1,11 @@
-# 💧 Hydrovel — Monitoramento Inteligente da Água
+#  Hydrovel — Monitoramento Inteligente da Água
 
-## 📌 Sobre o projeto
+##  Sobre o projeto
 
-O **Hydrovel** é um projeto de TCC voltado ao desenvolvimento de uma plataforma para monitoramento de sistemas hídricos residenciais, com foco na identificação de possíveis vazamentos e no acompanhamento de parâmetros de qualidade da água.
-
-A proposta integra tecnologias de Internet das Coisas (IoT), sensores e uma plataforma web para registrar, consultar e acompanhar informações relacionadas ao sistema hídrico.
-
+O **Hydrovel** é um projeto de TCC voltado ao desenvolvimento de uma plataforma para monitoramento de sistemas hídricos residenciais, com foco na identificação de possíveis vazamentos e no acompanhamento de parâmetros de qualidade da água. A proposta integra tecnologias de Internet das Coisas (IoT), sensores e uma plataforma web para registrar, consultar e acompanhar informações relacionadas ao sistema hídrico.
 **Importante:** os registros utilizados atualmente são dados de demonstração. A integração física com o ESP32 e os sensores ainda faz parte do desenvolvimento do projeto.
 
-## 🎯 Objetivos
+##  Objetivos
 
 - Monitorar parâmetros relacionados à água.
 - Registrar leituras recebidas pela plataforma.
@@ -16,21 +13,16 @@ A proposta integra tecnologias de Internet das Coisas (IoT), sensores e uma plat
 - Disponibilizar histórico de leituras.
 - Preparar a estrutura para futuras notificações e integração com dispositivos IoT.
 
-## 🛠️ Tecnologias utilizadas
+##  Tecnologias utilizadas
 
-### Front End
 - HTML
 - CSS
 - JavaScript
 - Laravel Blade
-
-### Back End
 - PHP
 - Laravel 12
 - Laravel Breeze para a estrutura de autenticação
 - API REST para recebimento de leituras
-
-### Banco de dados
 - SQLite
 - Migrations do Laravel
 - Seeders para inserção de dados de demonstração
@@ -41,7 +33,7 @@ A proposta integra tecnologias de Internet das Coisas (IoT), sensores e uma plat
 - Node.js e npm
 - Git e GitHub
 
-## ⚙️ Funcionalidades e estrutura
+##  Funcionalidades e estrutura
 
 - Página de visualização de leituras dos sensores.
 - Armazenamento de dados no banco SQLite.
@@ -51,13 +43,9 @@ A proposta integra tecnologias de Internet das Coisas (IoT), sensores e uma plat
 - Dados de demonstração para testes e apresentação acadêmica.
 - Laravel Breeze instalado para fornecer recursos de autenticação.
 
-## 🗄️ Banco de dados e Seeder
+##  Banco de dados e Seeder
 
-O projeto utiliza SQLite para armazenar as leituras.
-
-As migrations definem a estrutura das tabelas, enquanto os seeders permitem inserir registros de demonstração para testar e apresentar a aplicação.
-
-Para executar migrations em um ambiente de desenvolvimento configurado:
+O projeto utiliza SQLite para armazenar as leituras. As migrations definem a estrutura das tabelas, enquanto os seeders permitem inserir registros de demonstração para testar e apresentar a aplicação. Para executar migrations em um ambiente de desenvolvimento configurado:
 
 ```bash
 php artisan migrate
@@ -65,7 +53,7 @@ php artisan migrate
 
 Para executar o seeder, confira primeiro a configuração em `database/seeders/DatabaseSeeder.php`. A execução pode adicionar novos registros de demonstração.
 
-## 🔌 API de leituras
+##  API de leituras
 
 **Endpoint:** `POST /api/leituras`
 
@@ -88,10 +76,9 @@ Respostas esperadas:
 ### Configuração da chave
 
 Configure `SENSOR_API_KEY` no arquivo `.env`. Não publique a chave real no GitHub.
-
 O arquivo `.env.example` contém um valor ilustrativo para orientar a configuração.
 
-## 🚀 Como executar o projeto
+##  Como executar o projeto
 
 1. Instale PHP, Composer e as dependências necessárias do Laravel.
 2. Clone este repositório.
@@ -136,21 +123,21 @@ php artisan serve
 
 Acesse o endereço informado pelo Laravel no terminal, normalmente `http://127.0.0.1:8000`.
 
-## 🎨 Protótipo no Figma
+##  Protótipo no Figma
 
 **Link:** a adicionar após a publicação do projeto no Figma.
 
-## 🎥 Vídeo de apresentação
+##  Vídeo de apresentação
 
 **Link do YouTube:** a adicionar após a publicação do vídeo.
 
 O vídeo deverá demonstrar o funcionamento do site, a autenticação, o banco de dados com os dados de demonstração e a contribuição dos integrantes.
 
-## 👥 Contribuições dos integrantes
+##  Contribuições dos integrantes
 
 Preencher com o nome de cada integrante e suas contribuições reais no projeto.
 
-## 📌 Próximas etapas
+##  Próximas etapas
 
 - Integrar o ESP32 e os sensores físicos.
 - Receber leituras reais dos dispositivos.
@@ -158,6 +145,6 @@ Preencher com o nome de cada integrante e suas contribuições reais no projeto.
 - Melhorar a visualização do histórico.
 - Desenvolver notificações remotas, conforme o escopo do projeto.
 
-## 📄 Licença
+##  Licença
 
 Projeto desenvolvido para fins acadêmicos.
