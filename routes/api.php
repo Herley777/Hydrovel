@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/leituras', [
     LeituraSensorController::class,
-    'store'
+    'storeApi'
 ])->middleware('chave.sensor');
 
 Route::get('/user', function (Request $request) {

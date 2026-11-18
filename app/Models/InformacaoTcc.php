@@ -1,4 +1,3 @@
-```php
 <?php
 
 namespace App\Models;
@@ -13,4 +12,3 @@ class InformacaoTcc extends Model
         'descricao',
     ];
 }
-```

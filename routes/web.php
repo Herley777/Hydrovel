@@ -1,4 +1,3 @@
-
 <?php
 
 use App\Http\Controllers\LeituraSensorController;
@@ -30,6 +29,28 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/sensores', [LeituraSensorController::class, 'index'])
         ->name('sensores.index');
+
+    Route::get('/sensores/create', [LeituraSensorController::class, 'create'])
+        ->name('sensores.create');
+
+    Route::post('/sensores', [LeituraSensorController::class, 'store'])
+        ->name('sensores.store');
+
+    Route::get('/sensores/{id}/edit', [LeituraSensorController::class, 'edit'])
+        ->whereNumber('id')
+        ->name('sensores.edit');
+
+    Route::put('/sensores/{id}', [LeituraSensorController::class, 'update'])
+        ->whereNumber('id')
+        ->name('sensores.update');
+
+    Route::delete('/sensores/{id}', [LeituraSensorController::class, 'destroy'])
+        ->whereNumber('id')
+        ->name('sensores.destroy');
 });
 
 require __DIR__.'/auth.php';
+
+Route::fallback(function () {
+    return response('Página não encontrada.', 404);
+});

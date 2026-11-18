@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -104,7 +105,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 750px;
+            min-width: 950px;
         }
 
         th, td {
@@ -127,6 +128,74 @@
             padding: 25px;
             text-align: center;
             color: #718078;
+        }
+
+        .topo-acoes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .topo-acoes h2 {
+            margin-bottom: 0;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .botao-cadastrar {
+            background: #26966a;
+            color: white;
+        }
+
+        .botao-editar {
+            background: #e2ad32;
+            color: #18372b;
+        }
+
+        .botao-excluir {
+            background: #c94b4b;
+            color: white;
+        }
+
+        .acoes {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .acoes form {
+            margin: 0;
+        }
+
+        .mensagem {
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .sucesso {
+            background: #e2f5e9;
+            color: #17643d;
+            border-left: 5px solid #26966a;
+        }
+
+        .erro {
+            background: #fdeaea;
+            color: #9b2525;
+            border-left: 5px solid #c94b4b;
         }
 
         footer {
@@ -163,13 +232,37 @@
     </header>
 
     <main>
+        @if (session('success'))
+            <div class="mensagem sucesso">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="mensagem erro">
+                <strong>Não foi possível concluir a operação:</strong>
+                <ul>
+                    @foreach ($errors->all() as $erro)
+                        <li>{{ $erro }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="aviso">
-            <strong⚠️ Aviso importante</strong>
+            <strong>⚠️ Aviso importante</strong>
             Os valores exibidos correspondem às leituras registradas no sistema.
             A atualização depende do envio de dados pelos sensores.
         </div>
 
-        <h2>Últimas leituras</h2>
+        <div class="topo-acoes">
+            <h2>Últimas leituras</h2>
+
+            <a href="{{ route('sensores.create') }}"
+               class="botao botao-cadastrar">
+                + Cadastrar leitura
+            </a>
+        </div>
 
         @php
             $ultimaLeitura = $leituras->first();
@@ -229,6 +322,7 @@
                         <th>pH</th>
                         <th>Turbidez</th>
                         <th>Temperatura</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
 
@@ -241,10 +335,30 @@
                             <td>{{ $leitura->ph ?? '—' }}</td>
                             <td>{{ $leitura->turbidez ?? '—' }}</td>
                             <td>{{ $leitura->temperatura ?? '—' }}</td>
+
+                            <td>
+                                <div class="acoes">
+                                    <a href="{{ route('sensores.edit', $leitura->id) }}"
+                                       class="botao botao-editar">
+                                        Editar
+                                    </a>
+
+                                    <form action="{{ route('sensores.destroy', $leitura->id) }}"
+                                          method="POST"
+                                          onsubmit="return confirm('Tem certeza de que deseja excluir esta leitura?');">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="botao botao-excluir">
+                                            Excluir
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="vazio">
+                            <td colspan="7" class="vazio">
                                 Nenhuma leitura foi registrada ainda.
                             </td>
                         </tr>
