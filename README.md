@@ -123,6 +123,83 @@ php artisan serve
 
 Acesse o endereço informado pelo Laravel no terminal, normalmente `http://127.0.0.1:8000`.
 
+
+## Evidências do desenvolvimento
+
+As imagens a seguir apresentam registros do desenvolvimento e dos testes realizados na aplicação Hydrovel, incluindo a execução local, o banco de dados, o Front-End, o Back-End, as rotas e a proteção da API.
+
+### 1. Aplicação e banco de dados
+
+**01 — Aplicação executando em localhost**
+
+![Aplicação em localhost](docs/prints/01-site-localhost.png)
+
+**02 — Migrations do banco de dados**
+
+![Migrations](docs/prints/02-migrations.png)
+
+**03 — Seeder com dados de demonstração**
+
+![Seeder](docs/prints/03-seeder.png)
+
+**04 — Registros armazenados no banco de dados**
+
+![Registros do banco](docs/prints/04-registros-banco.png)
+
+### 2. Front-End — CRUD de leituras
+
+**05 — Listagem de leituras**
+
+![Listagem](docs/prints/05-frontend-listagem.png)
+
+**06 — Cadastro de leitura**
+
+![Cadastro](docs/prints/06-frontend-cadastro.png)
+
+**07 — Edição de leitura**
+
+![Edição](docs/prints/07-frontend-edicao.png)
+
+**08 — Confirmação de exclusão**
+
+![Exclusão](docs/prints/08-frontend-exclusao.png)
+
+### 3. Back-End — Controller e operações CRUD
+
+**09 a 13 — Implementação do Controller**
+
+![Controller CRUD 09](docs/prints/09-Back-End-controller-CRUD.png)
+
+![Controller CRUD 10](docs/prints/10-Back-End-controller-CRUD.png)
+
+![Controller CRUD 11](docs/prints/11-Back-End-controller-CRUD.png)
+
+![Controller CRUD 12](docs/prints/12-Back-End-controller-CRUD.png)
+
+![Controller CRUD 13](docs/prints/13-Back-End-controller-CRUD.png)
+
+### 4. Back-End — Rotas e Middleware
+
+**14 a 16 — Rotas do CRUD**
+
+![Rotas CRUD 14](docs/prints/14-Back-End-rotas-CRUD.png)
+
+![Rotas CRUD 15](docs/prints/15-Back-End-rotas-CRUD.png)
+
+![Rotas CRUD 16](docs/prints/16-Back-End-rotas-CRUD.png)
+
+**17 — Rotas da API**
+
+![Rotas API](docs/prints/17-Back-End-rotas-API.png)
+
+**18 — Middleware de proteção da API**
+
+![Middleware API](docs/prints/18-Back-End-Middleware-API.png)
+
+**19 — Registro do Middleware na aplicação**
+
+![Registro Middleware](docs/prints/19-Back-End-Registro-Middleware.png)
+
 ##  Protótipo no Figma
 
 **Link:** https://www.figma.com/design/ACJ72LwKj2ZrKZ3DCSsRe4?node-id=.
