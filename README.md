@@ -206,7 +206,7 @@ As imagens a seguir apresentam registros do desenvolvimento e dos testes realiza
 
 ##  Vídeo de apresentação
 
-**Link do YouTube:** a adicionar após a publicação do vídeo.
+**Link do YouTube: https://youtu.be/5XqDDvTt2YY **
 
 O vídeo deverá demonstrar o funcionamento do site, a autenticação, o banco de dados com os dados de demonstração e a contribuição dos integrantes.
 
